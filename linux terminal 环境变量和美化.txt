@@ -1,0 +1,69 @@
+一. anaconda
+	bash安装
+		1 ~/.bashrc 中添加:
+			export PATH=/opt/anaconda/bin:$PATH
+		2 运行:
+			conda init
+
+	zsh安装
+	    1 ~/.zshrc 中添加:
+	        export PATH=/opt/anaconda/bin:$PATH
+		2 运行:
+			conda init zsh
+
+	fish安装
+		1 ~/.config/fish 中添加
+			set -p PATH /opt/anaconda/bin:$PATH
+
+		2 运行:
+			conda init fish
+
+
+二. colorls
+	# 安装 Nerd 扩展字体
+	sudo pacman -S nerd-fonts
+	# 安装Ruby Gem
+	sudo pacman -S ruby
+	# 安装 colorls
+    gem install colorls
+
+    # 都要添加ruby环境变量
+    .zshrc
+	    alias ls='colorls -a'
+		alias ll='colorls -alh'
+		export PATH=/home/yuki/.local/share/gem/ruby/3.0.0/bin:$PATH
+
+	.config/fish/config.fish
+		alias ls='colorls -a'
+	    alias ll='colorls -alh'
+	    set -p PATH /home/yuki/.local/share/gem/ruby/3.0.0/bin:$PATH
+
+
+
+三. oh-my-fish
+    路径：~/.local/share/omf
+    去掉anaconda环境变量后使用 fish_config
+
+    oh-my-fish安装
+    命令: curl -L https://get.oh-my.fish | fish
+    omf list 显示安装包
+    omf theme 显示主题
+    omf theme 主题名 设置主题
+    omf install xxx 安装
+
+
+
+四. oh-my-zsh
+	安装
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+	插件
+	路径是: .oh-my-zsh/custom/plugins
+	git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+	终极主题 powerlevel10k
+	git clone https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+	写入.zshrc
+	source ~/powerlevel10k/powerlevel10k.zsh-theme
