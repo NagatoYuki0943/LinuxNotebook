@@ -1,0 +1,30 @@
+~.bashrc
+	# 使用anaconda
+    export PATH=/opt/anaconda/bin:$PATH
+    conda init
+
+    # 使用colorls
+	alias ls='colorls -a'
+	alias ll='colorls -alh'
+	export PATH=/home/yuki/.local/share/gem/ruby/3.0.0/bin:$PATH
+
+~.zshrc
+    # 使用anaconda
+	export PATH=/opt/anaconda/bin:$PATH
+	codna init zsh
+
+	# 使用colorls
+	alias ls='colorls -a'
+	alias ll='colorls -alh'
+	export PATH=/home/yuki/.local/share/gem/ruby/3.0.0/bin:$PATH
+
+
+~.config/fish/config.fish
+	# 使用anaconda
+	set -p PATH /opt/anaconda/bin:$PATH
+    conda init fish
+
+	# 使用colorls
+	alias ls='colorls -a'
+	alias ll='colorls -alh'
+	set -p PATH /home/yuki/.local/share/gem/ruby/3.0.0/bin:$PATH
