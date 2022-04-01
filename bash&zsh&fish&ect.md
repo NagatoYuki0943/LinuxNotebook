@@ -107,16 +107,16 @@ export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 
 ### 添加插件
 
-> 将下载好的插件放到 `~/.oh-my-zsh/custom/plugins` 目录下,记着解压
->
-> 如 `zsh-autosuggestions`
->
-> `~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/*`
->
+```sh
+cd ~/.on-my-zsh/custom/plugins/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+```
+
 > 然后在 `.zshrc` 中添加，多个插件使用空格区分
 
 ```bash
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
 #### incr
@@ -143,7 +143,9 @@ ZSH_THEME="robbyrussell"
 
 > https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
 >
-> 安装多个字体，github有下载
+> 安装多个字体，github有下载,同时要更改terminal以及编辑器的terminal字体
+>
+> 配置文件在 `~/.p10k.zsh`
 
 
 
@@ -156,6 +158,12 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 
 > Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
 
+##### 设置 p10k(出现字体乱码就重新设置即可)
+
+```sh
+p10k configure
+```
+
 ## 4 anaconda
 
 ```sh
@@ -163,6 +171,16 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 export PATH=$PATH:/opt/anaconda/bin
 codna init zsh
 ```
+
+## 字体乱码
+
+> 可以尝试安装powerline字体
+>
+> https://github.com/powerline/fonts
+>
+> 下载解压后 `./install` 安装
+
+
 
 ---
 
