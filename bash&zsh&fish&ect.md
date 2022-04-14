@@ -39,6 +39,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # cuda
+export CUDNN_DIR=/usr/local/cuda-11.3
 export PATH=$PATH:/usr/local/cuda-11.3/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.3/lib64
 
@@ -47,8 +48,8 @@ export ONNXRUNTIME_DIR=~/onnxruntime-gpu
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/onnxruntime-gpu/lib
 
 #tensorRT
-export TENSORRT_DIR=~/TensorRT-8.2.3.0
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/TensorRT-8.2.3.0/lib
+export TENSORRT_DIR=~/TensorRT
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/TensorRT/lib
 
 # 使用colorls
 alias ls='colorls -a'
@@ -109,7 +110,7 @@ export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 
 ```sh
 cd ~/.on-my-zsh/custom/plugins/
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
 
@@ -123,7 +124,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 > https://mimosa-pudica.net/zsh-incremental.html
 >
-> 将下载好的插件放到 `~/.oh-my-zsh/custom/plugins` 目录下，记着解压
+> 将下载好的插件放到 `~/.oh-my-zsh/custom/plugins/incr` 目录下
 >
 > 在 `.zshrc` 最后一行写上
 
