@@ -227,6 +227,8 @@ omf theme
 ### 安装主题或插件
 
 > https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md 查看主题样式
+>
+> https://xiao_beita.gitee.io/009_fish_omf/
 
 ```sh
 omf install clearance es
@@ -234,7 +236,7 @@ omf install clearance es
 
 ### 改变主题
 
-> ays lambda neolambda
+> separation  emoji-powerline  ocean  neolambda  zish  ays  
 
 ```sh
 omf theme <theme-name>
