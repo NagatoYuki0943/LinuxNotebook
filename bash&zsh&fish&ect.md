@@ -389,8 +389,8 @@ set -p PATH $PATH:{新路径}
 ## 5 anaconda
 
 ```sh
+# 使用anaconda
 set -p PATH $PATH:/opt/anaconda/bin
-
 conda init fish
 ```
 
