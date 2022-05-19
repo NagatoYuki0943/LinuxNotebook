@@ -206,6 +206,27 @@ curl -L https://get.oh-my.fish | fish
 
 ## 3 omf 使用
 
+### config和path
+
+> 配置文件
+>
+> echo $OMF_CONFIG
+>
+> `~/.config/omf/`
+
+```python
+~/.config/omf/
+    ├── bundle		# 主题历史
+    ├── channel		# 更新通道
+    └── theme		# 当前主题
+```
+
+> 安装路径
+>
+> echo $OMF_PATH
+>
+> `~/.local/share/omf`
+
 ### 列出所有的安装包，运行：
 
 ```sh
