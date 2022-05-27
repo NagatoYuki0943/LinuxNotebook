@@ -39,7 +39,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # cuda
-export CUDNN_DIR=/usr/local/cuda-11.3
 export PATH=$PATH:/usr/local/cuda-11.3/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.3/lib64
 
@@ -48,8 +47,8 @@ export ONNXRUNTIME_DIR=~/onnxruntime-gpu
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/onnxruntime-gpu/lib
 
 #tensorRT
-export TENSORRT_DIR=~/TensorRT
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/TensorRT/lib
+export TENSORRT_DIR=~/TensorRT-8.2.3.0
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/TensorRT-8.2.3.0/lib
 
 # 使用colorls
 alias ls='colorls -a'
@@ -109,8 +108,8 @@ export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 ### 添加插件
 
 ```sh
-cd ~/.oh-my-zsh/custom/plugins/
-git clone https://github.com/zsh-users/zsh-autosuggestions.git
+cd ~/.on-my-zsh/custom/plugins/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
 
@@ -124,7 +123,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 > https://mimosa-pudica.net/zsh-incremental.html
 >
-> 将下载好的插件放到 `~/.oh-my-zsh/custom/plugins/incr` 目录下
+> 将下载好的插件放到 `~/.oh-my-zsh/custom/plugins` 目录下，记着解压
 >
 > 在 `.zshrc` 最后一行写上
 
@@ -206,27 +205,6 @@ curl -L https://get.oh-my.fish | fish
 
 ## 3 omf 使用
 
-### config和path
-
-> 配置文件
->
-> echo $OMF_CONFIG
->
-> `~/.config/omf/`
-
-```python
-~/.config/omf/
-    ├── bundle		# 主题历史
-    ├── channel		# 更新通道
-    └── theme		# 当前主题
-```
-
-> 安装路径
->
-> echo $OMF_PATH
->
-> `~/.local/share/omf`
-
 ### 列出所有的安装包，运行：
 
 ```sh
@@ -248,8 +226,6 @@ omf theme
 ### 安装主题或插件
 
 > https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md 查看主题样式
->
-> https://xiao_beita.gitee.io/009_fish_omf/
 
 ```sh
 omf install clearance es
@@ -257,7 +233,7 @@ omf install clearance es
 
 ### 改变主题
 
-> separation  emoji-powerline  ocean  neolambda  zish  ays  
+> ays lambda neolambda
 
 ```sh
 omf theme <theme-name>
@@ -410,8 +386,8 @@ set -p PATH $PATH:{新路径}
 ## 5 anaconda
 
 ```sh
-# 使用anaconda
 set -p PATH $PATH:/opt/anaconda/bin
+
 conda init fish
 ```
 
