@@ -1,0 +1,3 @@
+linux 查看U盘写入
+sync 用于将内存中的数据写入磁盘，如果在当前系统下有大量未保存的文件，可能会执行较长时间。
+cat /proc/meminfo | grep -i Dirty 查看是否有数据需要写入
