@@ -103,6 +103,8 @@ conda init powershell7
 
 # oh-my-posh
 
+> https://ohmyposh.dev/
+>
 > 安装字体 MesloLGM NF
 >
 > https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
@@ -181,5 +183,24 @@ oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-po
 oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\negligible.omp.json | Invoke-Expression
 oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\powerlevel10k_modern.omp.json | Invoke-Expression
 oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\velvet.omp.json | Invoke-Expression
+```
+
+
+
+# startship
+
+> https://starship.rs/zh-CN/
+
+## 安装
+
+```
+winget install --id Starship.Starship
+```
+
+## 配置
+
+```
+$PROFILE
+Invoke-Expression (&starship init powershell)
 ```
 
