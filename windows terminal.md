@@ -197,10 +197,198 @@ oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-po
 winget install --id Starship.Starship
 ```
 
-## 配置
+## 配置pwsh
 
+> 在Windows Terminal中的powershell中输入并回车
+>
+> powershell7和powershell都能这样用，下面复制即可
+
+```powershell
+notepad $profile
 ```
-$PROFILE
+
+> 第一次会显示找不到该文件，选择创建新文件，然后输入并保存
+
+```powershell
 Invoke-Expression (&starship init powershell)
 ```
 
+
+
+## 配置starship
+
+> https://starship.rs/zh-CN/config
+>
+> 您需要创建配置文件 `~/.config/starship.toml` 以供 Starship 使用
+
+Starship 的所有配置都在此 [TOML](https://github.com/toml-lang/toml)[ ](https://github.com/toml-lang/toml)
+
+[ (opens new window)](https://github.com/toml-lang/toml) 配置文件中完成：
+
+```toml
+# 设置配置范例，开启编辑器的自动补全
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# 在命令之间插入空行
+add_newline = true
+
+# 将提示符的“❯”替换为“➜”
+[character] # “character”是我们正在配置的组件
+success_symbol = "[➜](bold green)" # 设置“success_symbol” 字段为绿色加粗的“➜”
+
+# 禁用 package 组件，完全隐藏它的提示符
+[package]
+disabled = true
+    
+```
+
+您可以使用 `STARSHIP_CONFIG` 环境变量更改默认配置文件的位置：
+
+```sh
+export STARSHIP_CONFIG=~/example/non/default/path/starship.toml
+```
+
+在 PowerShell (Windows) 中，在 `$PROFILE` 中添加下面的代码行能达到同样的效果：
+
+```powershell
+$ENV:STARSHIP_CONFIG = "$HOME\example\non\default\path\starship.toml"    
+```
+
+或者在 Cmd (Windows) 中，将下面的代码添加到 `starship.lua`：
+
+```lua
+os.setenv('STARSHIP_CONFIG', 'C:\\Users\\user\\example\\non\\default\\path\\starship.toml')
+```
+
+| 选项              | 默认值                                                       | 描述                                                         |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `format`          | [见下文](https://starship.rs/zh-CN/config/#default-prompt-format) | 配置提示符的格式。                                           |
+| `right_format`    | `""`                                                         | See [Enable Right Prompt](https://starship.rs/advanced-config/#enable-right-prompt) |
+| `scan_timeout`    | `30`                                                         | Starship 扫描文件的超时时间（单位：毫秒）。                  |
+| `command_timeout` | `500`                                                        | Startship 执行命令的超时时间（单位：毫秒）。                 |
+| `add_newline`     | `true`                                                       | 在 shell 提示符之间插入空行。                                |
+
+## 提示符
+
+以下是关于提示符的配置项。
+
+### 配置项
+
+| 选项              | 默认值 | 描述                                                         |
+| ----------------- | ------ | ------------------------------------------------------------ |
+| `format`          | 见下文 | 配置提示符的格式。                                           |
+| `right_format`    | `""`   | See [Enable Right Prompt](https://starship.rs/advanced-config/#enable-right-prompt) |
+| `scan_timeout`    | `30`   | Starship 扫描文件的超时时间（单位：毫秒）。                  |
+| `command_timeout` | `500`  | Startship 执行命令的超时时间（单位：毫秒）。                 |
+| `add_newline`     | `true` | 在 shell 提示符之间插入空行。                                |
+
+### 示例
+
+```toml
+# ~/.config/starship.toml
+
+# Use custom format
+format = """
+[┌───────────────────>](bold green)
+[│](bold green)$directory$rust$package
+[└─>](bold green) """
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+```
+
+### 默认提示符格式
+
+如果没有提供`format`字段或者它的值是空的，将会使用默认的`format`配置来指定提示符的格式。 默认设置如下：
+
+```toml
+format = "$all"
+
+# Which is equivalent to
+# 去掉 $username 就不会显示用户了
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$container\
+$shell\
+$character"""
+```
+
+如果你只是想扩展默认的格式，你可以使用 `$all`; 你另外添加到格式中的modules不会重复出现。 例如：
+
+```toml
+# 将目录信息移到第二行
+format = "$all$directory$character"
+```
