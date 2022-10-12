@@ -130,6 +130,8 @@ conda init powershell7
 winget install JanDeDobbeleer.OhMyPosh -s winget
 ```
 
+## 配置
+
 > 在Windows Terminal中的powershell中输入并回车
 >
 > powershell7和powershell都能这样用，下面复制即可
@@ -179,9 +181,10 @@ notepad $profile
                                                                                              //填写文件夹中的主题json
 oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\hunk.omp.json | Invoke-Expression
 oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\iterm2.omp.json | Invoke-Expression
-oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\kali.omp.json | Invoke-Expression
 oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\negligible.omp.json | Invoke-Expression
-oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\powerlevel10k_modern.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\paradox.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\peru.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\powerlevel10k_rainbow.omp.json | Invoke-Expression
 oh-my-posh init pwsh --config C:\Users\Frostbite\AppData\Local\Programs\oh-my-posh\themes\velvet.omp.json | Invoke-Expression
 ```
 
