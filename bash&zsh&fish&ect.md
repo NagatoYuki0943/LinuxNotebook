@@ -134,6 +134,8 @@ source $ZSH/custom/plugins/incr/incr*.zsh
 ### 切换主题
 
 > 在 `.zshrc` 中修改
+> 
+> bira fino fino-time frontcube ntheloop jonathan peepcode xiong-chiamiov-plus
 
 ```bash
 ZSH_THEME="robbyrussell"
