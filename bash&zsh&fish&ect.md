@@ -39,16 +39,18 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # cuda
-export PATH=$PATH:/usr/local/cuda-11.3/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.3/lib64
+export CUDA_PATH=/usr/local/cuda
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # onnxruntime
 export ONNXRUNTIME_DIR=~/onnxruntime-gpu
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/onnxruntime-gpu/lib
+export LD_LIBRARY_PATH=~/onnxruntime-gpu/lib:$LD_LIBRARY_PATH
 
 #tensorRT
-export TENSORRT_DIR=~/TensorRT-8.2.3.0
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/TensorRT-8.2.3.0/lib
+export TENSORRT_DIR=~/TensorRT
+export PATH=~/TensorRT/bin:$PATH
+export LD_LIBRARY_PATH=~/TensorRT/lib:$LD_LIBRARY_PATH
 
 # 使用colorls
 alias ls='colorls -a'
