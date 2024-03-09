@@ -26,14 +26,17 @@ There is a screen on:
         1188255.llm     (03/09/2024 09:24:57 AM)        (Detached)
 1 Socket in /run/screen/S-root.
 
-> screen -r llm # 进入 llm
+> screen -r llm     # 进入 llm
+> screen -r 1188255 # 进入 llm
 
-> screen -d llm # 断开 llm
+> screen -d llm     # 断开 llm
+> screen -d 1188255 # 断开 llm
 
 > screen -ls
 There is a screen on:
         1188255.llm     (03/09/2024 09:24:58 AM)        (Detached)
-> screen -X -S llm quit # 删除 llm
+> screen -X -S llm quit     # 删除 llm
+> screen -X -S 1188255 quit # 删除 llm
 > screen -ls
 No Sockets found in /run/screen/S-root.
 ```
