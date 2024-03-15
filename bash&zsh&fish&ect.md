@@ -391,13 +391,13 @@ omf destroy
 #### 环境变量
 
 ```sh
-set -p PATH $PATH:{新路径}
+set -p PATH {新路径} $PATH
 ```
 
 ## 5 anaconda miniconda3
 
 ```sh
-set -p PATH $PATH:/opt/miniconda3/bin
+set -p PATH /opt/miniconda3/bin $PATH
 
 conda init fish
 ```
