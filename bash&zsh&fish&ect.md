@@ -110,7 +110,7 @@ export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 ### 添加插件
 
 ```sh
-cd ~/.on-my-zsh/custom/plugins/
+cd ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
