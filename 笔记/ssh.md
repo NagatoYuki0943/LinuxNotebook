@@ -21,6 +21,7 @@ ssh 用户名@目标IP -C -f -N -g -L 本地端口:目标IP:目标端口
 
 ssh user@hostname -CNg -L 8888:127.0.0.1:8888
 ssh root@ssh.intern-ai.org.cn -p 33344 -CNg -L 7860:127.0.0.1:7860 -o StrictHostKeyChecking=no
+ssh root@ssh.intern-ai.org.cn -p 33344 -CNg -L 7860:127.0.0.1:7860 -L 8501:127.0.0.1:8501 -o StrictHostKeyChecking=no
 ```
 
 将远端主机端口映射到本地端口
