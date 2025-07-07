@@ -203,14 +203,14 @@ sudo apt install fish
 
 安装 omf 很简单。你要做的只是在你的 Fish shell 中运行下面的命令。
 
-```
+```sh
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 omf help
 ```
 
 This will download the installer script and start the installation. Alternatively, you can download the installer and customize your install:
 
-```
+```sh
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
 fish install --path=~/.local/share/omf --config=~/.config/omf
 omf help
@@ -241,17 +241,17 @@ omf theme
 > https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md 查看主题样式
 
 ```sh
-omf install clearance es
+omf install separation emoji-powerline ocean neolambda zish ays 
 ```
 
 ### 改变主题
 
-> separation  emoji-powerline  ocean  neolambda  zish  ays  
+> separation emoji-powerline ocean neolambda zish ays 
 
 ```sh
 omf theme <theme-name>
 # 例如：
-omf theme agnoster
+omf theme emoji-powerline
 ```
 
 ### 搜索主题或插件
