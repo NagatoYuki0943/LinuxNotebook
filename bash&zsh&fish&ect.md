@@ -204,15 +204,16 @@ sudo apt install fish
 安装 omf 很简单。你要做的只是在你的 Fish shell 中运行下面的命令。
 
 ```
-curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 omf help
 ```
 
-或者 *下载脚本* 后自己执行：
+This will download the installer script and start the installation. Alternatively, you can download the installer and customize your install:
 
 ```
-curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install
-fish install
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
+fish install --path=~/.local/share/omf --config=~/.config/omf
+omf help
 ```
 
 ## 3 omf 使用
