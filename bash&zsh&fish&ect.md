@@ -199,7 +199,58 @@ sudo pacman -S fish
 sudo apt install fish
 ```
 
-## 2 安装oh-my-fish
+## 2 修改 `ll` 命令
+
+### 步骤 1: 查看 `ll` 的当前定义
+
+```sh
+type ll
+```
+
+你很可能会看到类似下面的输出，告诉你 `ll` 是一个函数，它执行 `ls -l` 命令，并把其它参数（`$argv`）传递给 `ls`。
+
+```
+ll is a function with definition
+# Defined in /usr/share/fish/functions/ll.fish @ line 4
+function ll --description 'List contents of directory using long format'
+    ls -lh $argv
+end
+```
+
+### 步骤 2: 修改函数并保存
+
+Fish shell 提供了非常方便的命令来编辑和保存函数：`funced` 和 `funcsave`。
+
+**编辑函数**: 在终端里输入 `funced ll`。
+
+```sh
+funced ll
+```
+
+这会打开一个编辑器（通常是 Vim 或你的默认 `$EDITOR`），里面是 `ll` 函数的定义。
+
+**修改内容**: 将 `ls -l $argv` 修改为你想要的样子。我强烈推荐使用 `ls -la` 或者更佳的 `ls -lA`。
+
+```sh
+# 将原来的
+ls -lh $argv
+# 修改为
+ls -AlhF $argv
+```
+
+**为什么要保留 `$argv`?** `$argv` 是一个特殊变量，代表传递给函数的所有参数。保留它，意味着你以后仍然可以这样使用 `ll`: `ll /path/to/dir`，此时 `/path/to/dir` 会被正确地传递给 `ls` 命令。如果删掉它，`ll` 就只能列出当前目录的内容了。
+
+**保存并退出编辑器**: 修改完成后，保存文件并退出编辑器（在 Vim 中是按 `ESC` 然后输入 `:wq` 并回车）。
+
+**永久保存函数**: 回到终端后，fish 会提示你函数定义已改变。此时，输入 `funcsave ll` 命令来永久保存你的修改。
+
+```sh
+funcsave ll
+```
+
+这个命令会自动将修改后的函数写入到你的个人配置目录中（通常是 `~/.config/fish/functions/ll.fish`），这样每次启动 fish 终端时它都会生效。
+
+## 3 安装oh-my-fish
 
 安装 omf 很简单。你要做的只是在你的 Fish shell 中运行下面的命令。
 
@@ -216,7 +267,15 @@ fish install --path=~/.local/share/omf --config=~/.config/omf
 omf help
 ```
 
-## 3 omf 使用
+## 4 ~.config/fish/config.fish
+
+#### 环境变量
+
+```sh
+set -p PATH {新路径} $PATH
+```
+
+## 5 omf 使用
 
 ### 列出所有的安装包，运行：
 
@@ -386,14 +445,7 @@ omf --help
 omf destroy
 ```
 
-## 4 ~.config/fish/config.fish
-#### 环境变量
-
-```sh
-set -p PATH {新路径} $PATH
-```
-
-## 5 anaconda miniconda3
+## 6 anaconda miniconda3
 
 ```sh
 set -p PATH /opt/miniconda3/bin $PATH
