@@ -241,12 +241,10 @@ omf theme
 > https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md 查看主题样式
 
 ```sh
-omf install separation emoji-powerline ocean neolambda zish ays 
+omf install agnoster ays batman bira bobthefish emoji-powerline neolambda ocean separation zish
 ```
 
 ### 改变主题
-
-> separation emoji-powerline ocean neolambda zish ays 
 
 ```sh
 omf theme <theme-name>
