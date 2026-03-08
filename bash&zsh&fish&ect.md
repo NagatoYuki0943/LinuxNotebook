@@ -250,20 +250,12 @@ funcsave ll
 
 这个命令会自动将修改后的函数写入到你的个人配置目录中（通常是 `~/.config/fish/functions/ll.fish`），这样每次启动 fish 终端时它都会生效。
 
-## 3 安装oh-my-fish
+## 3 安装 oh-my-fish
 
 安装 omf 很简单。你要做的只是在你的 Fish shell 中运行下面的命令。
 
 ```sh
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-omf help
-```
-
-This will download the installer script and start the installation. Alternatively, you can download the installer and customize your install:
-
-```sh
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
-fish install --path=~/.local/share/omf --config=~/.config/omf
+curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 omf help
 ```
 
